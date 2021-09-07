@@ -23,7 +23,7 @@ else {
     Install-Module -Name MSAL.PS -AcceptLicense -Force
 }
 
-$tenantId = "***REMOVED***"
+$tenantId = ""
 $clientId = "dae89220-69ba-4957-a77a-47b78695e883"
 $upn = whoami /upn
 $redirectUri = "https://MicrosoftPrintClient"
