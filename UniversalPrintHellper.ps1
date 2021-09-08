@@ -72,8 +72,15 @@ try {
 }
 catch {
     $errMsg = $_.Exception.Message
-    Write-Host $errMsg
-    exit 1
 }
-
-Stop-Transcript 
+finally {
+    if ($errMsg) {
+            Write-Host $errMsg
+            Stop-Transcript
+            exit 1
+    }
+    else {
+        Write-Output "Remediation completed successfully."
+        Stop-Transcript
+    }
+} 
